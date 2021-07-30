@@ -5,11 +5,13 @@ import uz.pdp.app_pcmarket_demo.entity.Basket;
 import uz.pdp.app_pcmarket_demo.entity.BasketProduct;
 import uz.pdp.app_pcmarket_demo.entity.Product;
 
-import javax.persistence.ManyToMany;
+import javax.persistence.Column;
+import javax.persistence.ManyToOne;
 import java.util.List;
 
-@Projection(types = Basket.class)
-public interface CustomBasket {
+@Projection(types = BasketProduct.class)
+public interface CustomBasketProduct {
    Integer getId();
-   List<BasketProduct> getBasketProduct();
+   Product getProduct();
+   Integer getAmount();
 }
