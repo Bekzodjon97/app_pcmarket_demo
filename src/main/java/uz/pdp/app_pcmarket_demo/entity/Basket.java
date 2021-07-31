@@ -16,6 +16,8 @@ public class Basket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany
-    private List<BasketProduct> basketProduct;
+    private String name;
+
+    @OneToOne
+    private Users users;
 }

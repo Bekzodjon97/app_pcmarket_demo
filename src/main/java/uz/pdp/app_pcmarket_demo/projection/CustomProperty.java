@@ -2,13 +2,10 @@ package uz.pdp.app_pcmarket_demo.projection;
 
 import org.springframework.data.rest.core.config.Projection;
 import uz.pdp.app_pcmarket_demo.entity.Characteristics;
-import uz.pdp.app_pcmarket_demo.entity.CharacteristicsValues;
-import uz.pdp.app_pcmarket_demo.entity.Order;
+import uz.pdp.app_pcmarket_demo.entity.Property;
 
-import javax.persistence.ManyToOne;
-
-@Projection(types = CharacteristicsValues.class)
-public interface CustomCharacteristicsValues {
+@Projection(types = Property.class)
+public interface CustomProperty {
     Integer getId();
 
     String getValue();

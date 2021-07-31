@@ -20,4 +20,7 @@ public class BasketProduct {
 
     @Column(nullable = false)
     private Integer amount;
+
+    @ManyToOne
+    private  Basket basket;
 }

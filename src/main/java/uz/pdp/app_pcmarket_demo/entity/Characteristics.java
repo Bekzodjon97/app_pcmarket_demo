@@ -18,4 +18,7 @@ public class Characteristics {
     @Column(nullable = false,unique = true)
     private String  name;
 
+    @ManyToOne
+    private Product product;
+
 }

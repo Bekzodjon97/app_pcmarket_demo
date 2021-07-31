@@ -25,8 +25,6 @@ public class Product extends AbsEntity {
     @ManyToOne(optional = false)
     private Category category;
 
-    @ManyToMany
-    private List<CharacteristicsValues> characteristics;
 
     private String description;
 
