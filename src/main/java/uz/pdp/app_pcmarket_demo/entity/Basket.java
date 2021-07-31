@@ -18,6 +18,6 @@ public class Basket {
 
     private String name;
 
-    @OneToOne
+    @ManyToOne
     private Users users;
 }

@@ -16,7 +16,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     @Query(value = "select distinct * from product " +
             "join Characteristics ch on ch.product_id=id"+
             "join Property pr on pr.characteristics_id=ch.id"+
-            "where price between minPrice=:minPrice and maxPrice=:maxPrice and pr.characteristics_id in =:list ",nativeQuery = true)
+            "where price between minPrice=:minPrice and maxPrice=:maxPrice and pr.id in =:list ",nativeQuery = true)
     List<Product> getFilteredProducts(double minPrice, double maxPrice, List<Integer> list);
 
 
