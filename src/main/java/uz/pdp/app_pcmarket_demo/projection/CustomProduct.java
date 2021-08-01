@@ -16,7 +16,5 @@ public interface CustomProduct {
 
     Category getCategory();
 
-    Characteristics getCharacteristics();
-
     String getDescription();
 }

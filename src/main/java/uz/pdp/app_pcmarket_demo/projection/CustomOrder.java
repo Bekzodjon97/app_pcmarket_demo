@@ -9,7 +9,7 @@ import uz.pdp.app_pcmarket_demo.entity.Users;
 public interface CustomOrder {
     Integer getId();
 
-    Users getUser();
+    Users getUsers();
 
     String getAddress();
 

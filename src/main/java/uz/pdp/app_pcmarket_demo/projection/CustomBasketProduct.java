@@ -14,4 +14,5 @@ public interface CustomBasketProduct {
    Integer getId();
    Product getProduct();
    Integer getAmount();
+   Basket getBasket();
 }

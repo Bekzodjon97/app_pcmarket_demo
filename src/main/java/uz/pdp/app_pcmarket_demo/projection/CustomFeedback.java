@@ -19,5 +19,5 @@ public interface CustomFeedback {
 
     Product getProduct();
 
-    Users getUser();
+
 }
