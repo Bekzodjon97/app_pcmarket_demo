@@ -18,11 +18,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .inMemoryAuthentication()
-                .withUser("super_admin").password(passwordEncoder().encode("super_admin")).roles("SUPER_ADMIN").authorities("READ_ALL_PRODUCT","ADD_PRODUCT","EDIT_PRODUCT","DELETE_PRODUCT","READ_ONE_PRODUCT")
+                .withUser("super_admin").password(passwordEncoder().encode("super_admin")).roles("SUPER_ADMIN").authorities("READ_ALL","ADD","EDIT","DELETE","READ_ONE")
                 .and()
-                .withUser("moderator").password(passwordEncoder().encode("moderator")).roles("MODERATOR").authorities("READ_ALL_PRODUCT","ADD_PRODUCT","EDIT_PRODUCT","READ_ONE_PRODUCT")
+                .withUser("moderator").password(passwordEncoder().encode("moderator")).roles("MODERATOR").authorities("READ_ALL","ADD","EDIT","READ_ONE")
                 .and()
-                .withUser("operator").password(passwordEncoder().encode("operator")).roles("OPERATOR").authorities("READ_ALL_PRODUCT","ADD_PRODUCT","READ_ONE_PRODUCT");
+                .withUser("operator").password(passwordEncoder().encode("operator")).roles("OPERATOR").authorities("READ_ALL","ADD","READ_ONE");
 
     }
 
@@ -37,9 +37,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
 
                 //Authority bo'yicha
-                .antMatchers(HttpMethod.DELETE,"/api/product/*").hasAuthority("DELETE_PRODUCT")
-                .antMatchers(HttpMethod.PUT,"/api/product/*").hasAuthority("EDIT_PRODUCT")
-                .antMatchers("/api/product/**").hasAnyAuthority("READ_ALL_PRODUCT","ADD_PRODUCT","EDIT_PRODUCT","DELETE_PRODUCT","READ_ONE_PRODUCT")
+                .antMatchers(HttpMethod.DELETE,"/api/**").hasAuthority("DELETE")
+                .antMatchers(HttpMethod.PUT,"/api/**").hasAuthority("EDIT")
+                .antMatchers("/api/**").hasAnyAuthority("READ_ALL","ADD","EDIT","DELETE","READ_ONE")
 
                 //Role based boyicha
 //                .antMatchers(HttpMethod.GET,"/api/product/**").hasAnyRole("SUPER_ADMIN","MODERATOR","OPERATOR")
